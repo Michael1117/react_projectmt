@@ -18,9 +18,9 @@
             /* flex-direction: column;
             flex-wrap: wrap; */
             justify-content: center;
-            align-items: baseline;
+            align-items: flex-start;
         }
-
+        /* 只有align-self写在子元素，其余的都写在父元素上 */
         .item{
             width: 50px;
             height: 100px;
@@ -31,7 +31,7 @@
         }
 
         .item3{
-            line-height: 50px;
+            align-self: flex-end;
         }
     </style>
 </head>

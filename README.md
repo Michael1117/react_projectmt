@@ -14,3 +14,5 @@ react_projectmt
 ## flex-shrink:1 表示不变，1以上才是缩小
  flex-shrink: 5 
 
+ ## flex-basis: 120px; 设置宽度
+

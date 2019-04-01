@@ -22,7 +22,7 @@
         }
         /* 只有align-self写在子元素，其余的都写在父元素上 */
         .item{
-            width: 50px;
+            width: 100px;
             height: 100px;
             background-color: #000;
             margin: 5px;
@@ -33,7 +33,7 @@
         /* order 默认是0，0表示优先级最高 */
         .item1{
             order: 0;
-            /* flex-grow: 2; */
+            flex-shrink: 2  
         }
         .item2{
             order: 2;

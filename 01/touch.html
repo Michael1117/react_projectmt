@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>touch</title>
+    <style type="text/css">
+        .content{
+            height: 200px;
+            width: 200px;
+            background-color: #000
+        }
+    </style>
+</head>
+<body>
+    <div id="content" class="content"></div>
+
+    <script type="text/javascript">
+        var div = document.getElementById('content');
+
+        div.addEventListener('touchstart', function() {
+            console.log('touchstart')
+        })
+        div.addEventListener('touchmove', function() {
+            console.log('touchmove')
+        })
+        div.addEventListener('touchend', function() {
+            console.log('touchsend')
+        })
+    </script>
+</body>
+</html>

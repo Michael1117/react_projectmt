@@ -1,0 +1,22 @@
+$width: 100px;
+$height: 100px ;
+
+.div1{
+    width: $width;
+    height: $height;
+    background: red;
+    .div1-inner{
+        width: 50%;
+        height: 50%;
+        background: yellow;
+    }
+    &.div1-other{
+        background: green;
+    }
+}
+
+.div2{
+    width: $width;
+    height: $height;
+    background: blue
+}

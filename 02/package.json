@@ -8,7 +8,9 @@
     "core-js": "^3.0.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-router-dom": "^5.0.0"
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
@@ -40,7 +42,7 @@
     "workbox-webpack-plugin": "^4.1.1"
   },
   "scripts": {
-    "dev": "webpack-dev-server",
+    "dev": "./node_modules/.bin/webpack --config webpack.config.dev.js",
     "build": "webpack"
   },
   "keywords": [],

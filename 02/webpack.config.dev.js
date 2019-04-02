@@ -9,6 +9,25 @@ const devPath = path.resolve(__dirname, 'dev');
 const pageDir = path.resolve(srcRoot, 'page');
 const mainFile = 'index.js'
 
+function getHtmlArray(entryMap) {
+    let htmlArray = [];
+    Object.keys(entryMap).forEach((key) => {
+        let fullPathName = path.resolve(pageDir, key);
+
+        let fileName = path.resolve(fullPathName, key + '.html');
+
+        if(fs.existsSync(fileName)) {
+            htmlArray.push(new HtmlWebapckPlugin({
+                filename: key + '.html',
+                template: fileName,
+                chunks: [key]
+            }))
+        }
+    })
+
+    return htmlArray;
+}
+
 // 对每一个入口文件进行遍历 多入口
 function getEntry() {
     let entryMap = {};
@@ -28,6 +47,7 @@ function getEntry() {
 }
 
 const entryMap = getEntry()
+const htmlArray = getHtmlArray(entryMap)
 
 module.exports = {
     mode: 'development',
@@ -57,6 +77,13 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebapckPlugin()
-    ]
+        
+    ].concat(htmlArray),
+    devServer: {
+        contentBase: './dist',
+        open: true,
+        port: 8080,
+        hot: true,
+        hotOnly: true 
+    }
 }
